@@ -26,14 +26,14 @@ public class AddressBook {
 	
 	public AddressBook(String firstName2, String lastName2, String address2, String cityName2, String stateName2,
 			String zip2, String phoneNumber2) {
-				this.firstName = "";
-				this.lastName = "";
-				this.address = "";
-				this.cityName = "";
-				this.stateName = "";
+				this.firstName = "firstName";
+				this.lastName = "lastname";
+				this.address = "address";
+				this.cityName = "city";
+				this.stateName = "statename";
 				this.zip = 0;
 				this.phoneNumber = 0;
-				this.emailID = "";
+				this.emailID = "emailID";
 		
 	}
 
@@ -57,11 +57,11 @@ public class AddressBook {
 		return stateName;
 	}
 
-	public String getZip() {
+	public int getZip() {
 		return zip;
 	}
 
-	public String getPhoneNumber() {
+	public long getPhoneNumber() {
 		return phoneNumber;
 	}
 	
