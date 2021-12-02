@@ -1,101 +1,143 @@
 package com.bridgelabz.addressbook;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 public class AddressBook {
-	private final String firstName;
-	private final String lastName;
-	private final String address;
-	private final String cityName;
-	private final String stateName;
-	public final int zip;
-	public final long phoneNumber;
-	private final String emailID;
-
-	public AddressBook(String firstName, String lastName, String address, String cityName, String stateName, int zip,
-			long phoneNumber, String emailID) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.cityName = cityName;
-		this.stateName = stateName;
-		this.zip = zip;
-		this.phoneNumber = phoneNumber;
-		this.emailID = emailID;
-	}
 	
-	public AddressBook(String firstName2, String lastName2, String address2, String cityName2, String stateName2,
-			String zip2, String phoneNumber2) {
-				this.firstName = "firstName";
-				this.lastName = "lastname";
-				this.address = "address";
-				this.cityName = "city";
-				this.stateName = "statename";
-				this.zip = 0;
-				this.phoneNumber = 0;
-				this.emailID = "emailID";
-		
+	String firstName;
+	String lastName;
+	String address;
+	String city;
+	String state;
+	int zip;
+	long phoneNumber;
+	String email;
+	private List<Contact> contactList = new ArrayList<>();
+
+	Scanner sc = new Scanner(System.in);
+
+	public void add(Contact contact) {
+		contactList.add(contact);
 	}
 
-	public String getFirstName() {
-		return firstName;
+	private void addContact() {
+
+		Contact person = new Contact();
+		System.out.println("Enter your First Name");
+		firstName = sc.next();
+		person.setFirstName(firstName);
+		System.out.println("Enter your Last Name");
+		lastName = sc.next();
+		person.setLastName(lastName);
+		System.out.println("Enter your Address");
+		address = sc.next();
+		person.setAddress(address);
+		System.out.println("Enter your City");
+		city = sc.next();
+		person.setCity(city);
+		System.out.println("Enter your State");
+		state = sc.next();
+		person.setState(state);
+		System.out.println("Enter your ZipCode");
+		zip = sc.nextInt();
+		person.setZip(zip);
+		System.out.println("Enter your Phone Number");
+		phoneNumber = sc.nextLong();
+		person.setPhoneNumber(phoneNumber);
+		System.out.println("Enter your E-mail");
+		email = sc.next();
+		person.setEmail(email);
+		contactList.add(new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email));
+
 	}
 
-	public String getLastName() {
-		return lastName;
+	private void display() {
+		int i = 1;
+		for (Contact s : contactList) {
+			System.out.println(
+					"Contact." + i + " [ FirstName=" + s.getFirstName() + ", FastName=" + s.getLastName() + ", Address="
+							+ s.getAddress() + ", city=" + s.getCity() + ", state=" + s.getState() + ", zip-code="
+							+ s.getZip() + ", Phone Number=" + s.getPhoneNumber() + ", email=" + s.getEmail() + "]");
+			i++;
+		}
 	}
 
-	public String getAddress() {
-		return address;
+	private int getIndex(String firstName) {
+		int index = -1;
+		for (int i = 0; i < contactList.size(); i++) {
+			if (firstName.equals(contactList.get(i).getFirstName())) {
+				return i;
+			}
+		}
+		return index;
 	}
 
-	public String getCityName() {
-		return cityName;
-	}
+	private void updateContact(int i) {
 
-	public String getStateName() {
-		return stateName;
-	}
+		System.out.println("Enter your First Name");
+		firstName = sc.next();
+		System.out.println("Enter your Last Name");
+		lastName = sc.next();
+		System.out.println("Enter your Address");
+		address = sc.next();
+		System.out.println("Enter your City");
+		city = sc.next();
+		System.out.println("Enter your State");
+		state = sc.next();
+		System.out.println("Enter your ZipCode");
+		zip = sc.nextInt();
+		System.out.println("Enter your Phone Number");
+		phoneNumber = sc.nextLong();
+		System.out.println("Enter your E-mail");
+		email = sc.next();
 
-	public int getZip() {
-		return zip;
-	}
+		contactList.set(i, (new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email)));
 
-	public long getPhoneNumber() {
-		return phoneNumber;
-	}
-	
-	@Override
-	public String toString() {
-		return "AddressBook [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", cityName="
-				+ cityName + ", stateName=" + stateName + ", zip=" + zip + ", phoneNumber=" + phoneNumber + "]";
-	}
-	public static AddressBook contactPerson() {
-		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("first name : ");
-		String firstName = scanner.next();
-		System.out.println("last name : ");
-		String lastName = scanner.next();
-		System.out.println("address : ");
-		String address = scanner.next();
-		System.out.println("city name : ");
-		String cityName = scanner.next();
-		System.out.println("state name : ");
-		String stateName = scanner.next();
-		System.out.println("zip : ");
-		String zip = scanner.next();
-		System.out.println("phone number : ");
-		String phoneNumber = scanner.next();
-		
-		AddressBook addressBook = new AddressBook(firstName, lastName, address, cityName, stateName, zip,
-				phoneNumber);
-		return addressBook;
 	}
 
 	public static void main(String[] args) {
-		System.out.println("welcome to the address book program");
-		AddressBook addressBook =contactPerson();
-		System.out.println(addressBook);
+		Scanner sc = new Scanner(System.in);
+		AddressBook addressBook = new AddressBook();
+		int act;
+		System.out.println("Welcome to Address Book");
+		do {
+			System.out.println("Enter\n1.Add\n2.Update\n3.Delete\n4.Print\n5.Exit");
+			act = sc.nextInt();
+			int index = -1;
+			String fName;
+			switch (act) {
+			case 1:
+				addressBook.addContact();
+				break;
+			case 2:
+				System.out.println("Enter your First name to update");
+				 fName = sc.next();
+				index = addressBook.getIndex(fName);
+				if (index < 0) {
+					break;
+				}
+				addressBook.updateContact(index);
+				break;
+			case 3:
+				System.out.println("Enter your First name to delete");
+				 fName = sc.next();
+				index = addressBook.getIndex(fName);
+				addressBook.removeContact(index);
+
+			case 4:
+				addressBook.display();
+				break;
+			case 5:
+				System.out.println("Bye Bye");
+				System.exit(0);
+			}
+		} while (act > 0 || act > 5);
+		sc.close();
+	}
+
+	private void removeContact(int index) {
+		contactList.remove(index);
+
 	}
 }
