@@ -56,7 +56,7 @@ public class AddressBook {
 		int i = 1;
 		for (Contact s : contactList) {
 			System.out.println(
-					"Contact." + i + " [ FirstName=" + s.getFirstName() + ", FastName=" + s.getLastName() + ", Address="
+					"Contact." + i + " [ FirstName=" + s.getFirstName() + ", LastName=" + s.getLastName() + ", Address="
 							+ s.getAddress() + ", city=" + s.getCity() + ", state=" + s.getState() + ", zip-code="
 							+ s.getZip() + ", Phone Number=" + s.getPhoneNumber() + ", email=" + s.getEmail() + "]");
 			i++;
@@ -72,7 +72,7 @@ public class AddressBook {
 		}
 		return index;
 	}
-
+	
 	private void updateContact(int i) {
 
 		System.out.println("Enter your First Name");
@@ -95,6 +95,12 @@ public class AddressBook {
 		contactList.set(i, (new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email)));
 
 	}
+	
+	public void removeContact(int index) {
+		contactList.remove(index);
+
+	}
+
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -124,6 +130,7 @@ public class AddressBook {
 				 fName = sc.next();
 				index = addressBook.getIndex(fName);
 				addressBook.removeContact(index);
+				break;
 
 			case 4:
 				addressBook.display();
@@ -136,8 +143,6 @@ public class AddressBook {
 		sc.close();
 	}
 
-	private void removeContact(int index) {
-		contactList.remove(index);
+	
 
-	}
 }
