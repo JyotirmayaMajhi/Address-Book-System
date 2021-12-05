@@ -1,10 +1,8 @@
 package com.bridgelabz.addressbook;
 
-import java.util.Scanner;
 
 public class Contact {
 	
-	Scanner sc = new Scanner(System.in);
 
 	private String firstName;
 	private String lastName;
@@ -17,7 +15,7 @@ public class Contact {
 
 	@Override
 	public String toString() {
-		return getClass().getSimpleName() + "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address="
+		return getClass().getSimpleName() + "[firstName=" + firstName + ", lastName=" + lastName + ", address="
 				+ address + ", city=" + city + ", state=" + state + ", zip=" + zip + ", phoneNumber=" + phoneNumber
 				+ ", email=" + email + "]";
 	}
