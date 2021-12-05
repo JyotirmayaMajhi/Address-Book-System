@@ -92,6 +92,22 @@ public class AddressBook {
 		}
 		return false;
 	}
+	
+	public void searchByCityName() {
+		System.out.println("Enter City Name or State Name");
+		String searchText = sc.next();
+		int count = 0;
+		for (int i = 0; i < contactList.size(); i++) {
+			if (contactList.get(i).getCity().contains(searchText)
+					|| contactList.get(i).getState().contains(searchText)) {
+				count++;
+				System.out.println("Search by city name : " + contactList.get(i));
+			}
+		}
+		if (count == 0) {
+			System.out.println("city or state not found in Address Book");
+		}
+	}
 
 	public void updateContact(int i) {
 
