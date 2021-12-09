@@ -94,19 +94,19 @@ public class AddressBook {
 	}
 	
 	public void searchByCityName() {
-		System.out.println("Enter City Name or State Name");
+		System.out.println("Enter City Name");
 		String searchText = sc.next();
-		int count = 0;
-		for (int i = 0; i < contactList.size(); i++) {
-			if (contactList.get(i).getCity().contains(searchText)
-					|| contactList.get(i).getState().contains(searchText)) {
-				count++;
-				System.out.println("Search by city name : " + contactList.get(i));
-			}
-		}
-		if (count == 0) {
-			System.out.println("city or state not found in Address Book");
-		}
+		contactList.stream().filter(el -> el.getCity().equals(searchText))
+							.forEach(System.out::println);
+		
+	}
+	
+	public void searchByStateName() {
+		System.out.println("Enter State Name");
+		String searchText = sc.next();
+		contactList.stream().filter(el -> el.getCity().equals(searchText))
+							.forEach(System.out::println);
+		
 	}
 
 	public void updateContact(int i) {

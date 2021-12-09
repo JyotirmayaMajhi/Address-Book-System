@@ -30,7 +30,7 @@ public class MultipleAddressBook {
 		int act;
 		System.out.println("Welcome to Address Book");
 		do {
-			System.out.println("Enter\n1.Add\n2.Update\n3.Delete\n4.Print\n5.City Name\n6.Exit");
+			System.out.println("Enter\n1.Add\n2.Update\n3.Delete\n4.Print\n5.City Name\n7.State Name\n8.Exit");
 			act = sc.nextInt();
 			int index = -1;
 			String fName;
@@ -60,6 +60,7 @@ public class MultipleAddressBook {
 			
 			case 5: 
 				addressBook.searchByCityName();
+				addressBook.searchByStateName();
 				break;
 				
 			case 6:
