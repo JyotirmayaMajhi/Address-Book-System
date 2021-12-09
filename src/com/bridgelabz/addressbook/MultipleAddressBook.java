@@ -60,10 +60,20 @@ public class MultipleAddressBook {
 			
 			case 5: 
 				addressBook.searchByCityName();
+				break;
+			case 6:
 				addressBook.searchByStateName();
 				break;
+			
+			case 7:
+				addressBook.viewCityName();
+				break;
 				
-			case 6:
+			case 8:
+				addressBook.viewStateName();
+				break;
+				
+			case 9:
 				System.out.println("exit " + bookName);
 				act = 0;
 			}

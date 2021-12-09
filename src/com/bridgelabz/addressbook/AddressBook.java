@@ -1,6 +1,7 @@
 package com.bridgelabz.addressbook;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -98,7 +99,7 @@ public class AddressBook {
 		String searchText = sc.next();
 		contactList.stream().filter(el -> el.getCity().equals(searchText))
 							.forEach(System.out::println);
-		
+						
 	}
 	
 	public void searchByStateName() {
@@ -107,6 +108,18 @@ public class AddressBook {
 		contactList.stream().filter(el -> el.getState().equals(searchText))
 							.forEach(System.out::println);
 		
+	}
+	
+	public void viewCityName() {
+		String searchText = sc.next();
+		contactList.stream().filter(el -> el.getCity().equals(searchText))
+							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
+	}
+	
+	public void viewStateName() {
+		String searchText = sc.next();
+		contactList.stream().filter(el -> el.getState().equals(searchText))
+							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
 	}
 
 	public void updateContact(int i) {
