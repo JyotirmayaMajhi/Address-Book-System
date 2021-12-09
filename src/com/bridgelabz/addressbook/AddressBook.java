@@ -15,7 +15,13 @@ public class AddressBook {
 	int zip;
 	long phoneNumber;
 	String email;
-	private static List<Contact> contactList = new ArrayList<>();;
+	private static List<Contact> contactList;
+
+	
+	public AddressBook() {
+		super();
+		contactList = new ArrayList<>();
+	}
 
 	public static List<Contact> getContactList() {
 		return contactList;
@@ -63,14 +69,8 @@ public class AddressBook {
 	}
 
 	public void display() {
-		int i = 1;
-		for (Contact s : contactList) {
-			System.out.println(
-					"Contact." + i + " [ FirstName=" + s.getFirstName() + ", FastName=" + s.getLastName() + ", Address="
-							+ s.getAddress() + ", city=" + s.getCity() + ", state=" + s.getState() + ", zip-code="
-							+ s.getZip() + ", Phone Number=" + s.getPhoneNumber() + ", email=" + s.getEmail() + "]");
-			i++;
-		}
+		contactList.stream().forEach(System.out::println);
+		
 	}
 
 	public int getIndex(String firstName) {

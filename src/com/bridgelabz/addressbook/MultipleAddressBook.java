@@ -71,9 +71,6 @@ public class MultipleAddressBook {
 	}
 
 	public void displayBook() {
-		System.out.println("AddressBooks");
-		for (Entry<String, List> entry : book.entrySet()) {
-			System.out.println("Address Book name is " + entry.getKey() + "\nvalue :-\n" + entry.getValue().toString());
-		}
+		book.entrySet().stream().forEach(el -> System.out.println(el));//STREAM
 	}
 }
