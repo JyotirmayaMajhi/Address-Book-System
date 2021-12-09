@@ -97,30 +97,32 @@ public class AddressBook {
 	public void searchByCityName() {
 		System.out.println("Enter City Name");
 		String searchText = sc.next();
-		contactList.stream().filter(el -> el.getCity().equals(searchText))
-							.forEach(System.out::println);
+		Long count = contactList.stream().filter(el -> el.getCity().equals(searchText))
+										 .peek(System.out::println)
+										 .count();
 						
 	}
 	
 	public void searchByStateName() {
 		System.out.println("Enter State Name");
 		String searchText = sc.next();
-		contactList.stream().filter(el -> el.getState().equals(searchText))
-							.forEach(System.out::println);
+		Long count = contactList.stream().filter(el -> el.getState().equals(searchText))
+							.peek(System.out::println)
+							.count();
 		
 	}
 	
-	public void viewCityName() {
-		String searchText = sc.next();
-		contactList.stream().filter(el -> el.getCity().equals(searchText))
-							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
-	}
-	
-	public void viewStateName() {
-		String searchText = sc.next();
-		contactList.stream().filter(el -> el.getState().equals(searchText))
-							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
-	}
+//	public void viewCityName() {
+//		String searchText = sc.next();
+//		contactList.stream().filter(el -> el.getCity().equals(searchText))
+//							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
+//	}
+//	
+//	public void viewStateName() {
+//		String searchText = sc.next();
+//		contactList.stream().filter(el -> el.getState().equals(searchText))
+//							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
+//	}
 
 	public void updateContact(int i) {
 
