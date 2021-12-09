@@ -104,7 +104,7 @@ public class AddressBook {
 	public void searchByStateName() {
 		System.out.println("Enter State Name");
 		String searchText = sc.next();
-		contactList.stream().filter(el -> el.getCity().equals(searchText))
+		contactList.stream().filter(el -> el.getState().equals(searchText))
 							.forEach(System.out::println);
 		
 	}
