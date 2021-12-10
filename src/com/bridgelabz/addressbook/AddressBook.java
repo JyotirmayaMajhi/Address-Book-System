@@ -100,6 +100,7 @@ public class AddressBook {
 		Long count = contactList.stream().filter(el -> el.getCity().equals(searchText))
 										 .peek(System.out::println)
 										 .count();
+		System.out.println("The number of Contacts in City :" + searchText + " = " + count);
 						
 	}
 	
@@ -109,7 +110,7 @@ public class AddressBook {
 		Long count = contactList.stream().filter(el -> el.getState().equals(searchText))
 							.peek(System.out::println)
 							.count();
-		
+		System.out.println("The number of Contacts in City :" + searchText + " = " + count);
 	}
 	
 //	public void viewCityName() {

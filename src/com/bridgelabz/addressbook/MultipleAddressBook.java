@@ -65,13 +65,13 @@ public class MultipleAddressBook {
 				addressBook.searchByStateName();
 				break;
 			
-			case 7:
-				addressBook.viewCityName();
-				break;
-				
-			case 8:
-				addressBook.viewStateName();
-				break;
+//			case 7:
+//				addressBook.viewCityName();
+//				break;
+//				
+//			case 8:
+//				addressBook.viewStateName();
+//				break;
 				
 			case 9:
 				System.out.println("exit " + bookName);
