@@ -16,7 +16,7 @@ public class AddressBook {
 	int zip;
 	long phoneNumber;
 	String email;
-	private static List<Contact> contactList;
+	public static List<Contact> contactList;
 
 	
 	public AddressBook() {
@@ -34,7 +34,7 @@ public class AddressBook {
 
 	Scanner sc = new Scanner(System.in);
 
-	public void addContact() {
+	public List<Contact>addContact() {
 
 		Contact person = new Contact();
 		System.out.println("Enter your First Name");
@@ -66,6 +66,8 @@ public class AddressBook {
 		} else {
 			System.out.println("Duplicate value cant be add");
 		}
+		
+		return contactList;
 
 	}
 
@@ -113,17 +115,17 @@ public class AddressBook {
 		System.out.println("The number of Contacts in City :" + searchText + " = " + count);
 	}
 	
-//	public void viewCityName() {
-//		String searchText = sc.next();
-//		contactList.stream().filter(el -> el.getCity().equals(searchText))
-//							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
-//	}
-//	
-//	public void viewStateName() {
-//		String searchText = sc.next();
-//		contactList.stream().filter(el -> el.getState().equals(searchText))
-//							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
-//	}
+	public void viewCityName() {
+		String searchText = sc.next();
+		contactList.stream().filter(el -> el.getCity().equals(searchText))
+							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
+	}
+	
+	public void viewStateName() {
+		String searchText = sc.next();
+		contactList.stream().filter(el -> el.getState().equals(searchText))
+							.forEach(p -> System.out.println("First Name :"+p.getFirstName()+"Last Name:"+p.getLastName()));
+	}
 
 	public void updateContact(int i) {
 
