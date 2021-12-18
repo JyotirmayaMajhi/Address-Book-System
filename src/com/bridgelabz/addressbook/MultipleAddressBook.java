@@ -1,5 +1,6 @@
 package com.bridgelabz.addressbook;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -81,6 +82,8 @@ public class MultipleAddressBook {
 		AddressBookFileIO fileIO = new AddressBookFileIO();
 		System.out.println(contactList);
 		fileIO.writeAddressBook(contactList);
+		CSV csv = new CSV();
+		csv.write(contactList);
 	}
 
 	public void displayBook() {

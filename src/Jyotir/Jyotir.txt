@@ -1,1 +1,7 @@
 Contact[firstName=Jyotirmaya, lastName=Majhi, address=Ranchi, city=Ranchi, state=Jharkhand, zip=834002, phoneNumber=7438830098, email=jyotirmayamajhi1998@gmail.com]
+Contact[firstName=Ten, lastName=Duk, address=Bangalore, city=Bangalore, state=Karnataka, zip=535155, phoneNumber=3513514355, email=tenduk@gmail.com]
+Contact[firstName=Aman, lastName=Raj, address=Patna, city=Patna, state=Bihar, zip=535153, phoneNumber=8641535133, email=amanraj123@gmail.com]
+Contact[firstName=Shubham, lastName=Gawali, address=Nasik, city=Nasik, state=Maharashtra, zip=855545, phoneNumber=8351531351, email=shubhamgawali25@gmail.com]
+Contact[firstName=Priyanka, lastName=Patil, address=Bhusaval, city=Bhusaval, state=Maharashtra, zip=845645, phoneNumber=8435135135, email=priyankapatil123@gmail.com]
+Contact[firstName=Sinky, lastName=Verma, address=Amritsar, city=Amritsar, state=Punjab, zip=645645, phoneNumber=9453515356, email=sinkyverma234@gmail.com]
+Contact[firstName=Naincy, lastName=Raj, address=Patna, city=Patna, state=Bihar, zip=845654, phoneNumber=8455314535, email=naincyraj@gmail.com]

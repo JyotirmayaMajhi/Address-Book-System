@@ -19,6 +19,20 @@ public class Main {
 		}
 		books.displayBook();
 		
+//		System.out.println("Enter\n1.Add\n2.Read\n3.Exit");
+//		int read;
+//		read = sc.nextInt();
+//		switch (read) {
+//		case 1:
+//			books.addAddressBook();
+//			break;
+//		case 2:
+//			System.out.println("Enter book");
+//			
+//		case 3:
+//			
+//
+//		
 	}
 
 }

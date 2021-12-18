@@ -1,5 +1,9 @@
 package com.bridgelabz.addressbook;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,8 +17,8 @@ public class AddressBook {
 	String address;
 	String city;
 	String state;
-	int zip;
-	long phoneNumber;
+	String zip;
+	String phoneNumber;
 	String email;
 	public static List<Contact> contactList;
 
@@ -54,10 +58,10 @@ public class AddressBook {
 			state = sc.next();
 			person.setState(state);
 			System.out.println("Enter your ZipCode");
-			zip = sc.nextInt();
+			zip = sc.next();
 			person.setZip(zip);
 			System.out.println("Enter your Phone Number");
-			phoneNumber = sc.nextLong();
+			phoneNumber = sc.next();
 			person.setPhoneNumber(phoneNumber);
 			System.out.println("Enter your E-mail");
 			email = sc.next();
@@ -140,9 +144,9 @@ public class AddressBook {
 		System.out.println("Enter your State");
 		state = sc.next();
 		System.out.println("Enter your ZipCode");
-		zip = sc.nextInt();
+		zip = sc.next();
 		System.out.println("Enter your Phone Number");
-		phoneNumber = sc.nextLong();
+		phoneNumber = sc.next();
 		System.out.println("Enter your E-mail");
 		email = sc.next();
 		contactList.set(i, new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email));
